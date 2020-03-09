@@ -15,14 +15,11 @@ public class LogGenerator {
     private static DateTimeFormatter format = DateTimeFormatter.ofPattern("ddMMYYY_HHmmss");
 
     public static void main(String... args) {
-        //final AuditConfigurationMap config = AuditConfiguration.loadFromClasspath("/configurer.audit.properties");
-        //Log4j1Configurer.configure(config);
         Long timeInMilles = null;
+        num_logs_tobe_generated = getNumLogs();
         try {
-            num_logs_tobe_generated = getNumLogs();
             timeInMilles = new Date().getTime();
             while (true) {
-
                 LogGenerator.generateLogs();
             }
         } catch (Exception e) {
@@ -92,13 +89,13 @@ public class LogGenerator {
     }
 
     private static int getNumLogs() {
-        System.out.println("Enter num of logs to be generated.");
         Scanner in = new Scanner(System.in);
+        System.out.println("Enter num of logs to be generated.");
         String s = in.nextLine();
         try {
             num_logs_tobe_generated = Integer.parseInt(s);
         } catch (Exception e) {
-            System.out.println("Problem with your input and so generating default num of logs.");
+            System.out.println("Invalid input : " + s);
         }
         return num_logs_tobe_generated;
     }

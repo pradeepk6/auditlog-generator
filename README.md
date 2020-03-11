@@ -1,4 +1,4 @@
-#### Generates sample audit logs
+#### A java application that generates sample audit logs using daikon-audit library
 
 ##### sample output of 5 log events when file appender is chosen
 

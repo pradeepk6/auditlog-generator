@@ -17,6 +17,12 @@ public class LogGenerator {
     public static void main(String... args) {
         Long timeInMilles = null;
         num_logs_tobe_generated = getNumLogs();
+
+        //final AuditConfigurationMap config = AuditConfiguration.loadFromClasspath("/configurer.audit.properties");
+
+        // Log4j2Configurer.configure(config);
+        //System.setProperty("log4j2.debug","");
+
         try {
             timeInMilles = new Date().getTime();
             while (true) {

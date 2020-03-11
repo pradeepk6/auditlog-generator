@@ -1,4 +1,8 @@
-target/
+### Gradle ###
+.gradle
+
 /.idea/
 /*.iml
+
+/build/
 auditlogs/

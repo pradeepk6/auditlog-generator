@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+        <Console name="console">
+            <!-- <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/> -->
+            <EcsLayout serviceName="my-app"/>
+        </Console>
+        <File name="file" fileName="auditlogs/config_in_log4j2xml_file/app.log">
+            <!-- <JSONLayout complete="true" compact="false"/> -->
+            <!-- <PatternLayout> <Pattern>%d %p %c{1.} [%t] %m%n</Pattern> </PatternLayout> -->
+            <Log4j2JSONLayout></Log4j2JSONLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
